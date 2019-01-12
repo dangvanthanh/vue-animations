@@ -1,13 +1,29 @@
 <template>
   <div>
-    <router-link tag="a" :to="{ name: 'box' }">Box</router-link>
-    <router-link tag="a" :to="{ name: 'revealing' }">Revealing</router-link>
+    <router-link
+      tag="a"
+      v-for="link in links"
+      :key="link.id"
+      :to="{ name: link.name }"
+      class="block text-black no-underline"
+    >
+      {{ link.title }}
+    </router-link>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'home'
+  name: 'home',
+  data() {
+    return {
+      links: [
+        { id: 1, name: 'box', title: 'Box' },
+        { id: 2, name: 'revealing', title: 'Revealing' },
+        { id: 3, name: 'basic', title: 'Basic' }
+      ]
+    };
+  }
 };
 </script>
 

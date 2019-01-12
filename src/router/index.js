@@ -15,6 +15,11 @@ const routes = [
     path: '/revealing',
     name: 'revealing',
     component: () => import('@/components/Revealing.vue')
+  },
+  {
+    path: '/basic',
+    name: 'basic',
+    component: () => import('@/views/Basic.vue')
   }
 ];
 
